@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Hero } from "@/components/hero";
 import { Ticker } from "@/components/ticker";
 import { Videos } from "@/components/videos";
@@ -9,6 +8,7 @@ import { About } from "@/components/about";
 import { Faq } from "@/components/faq";
 import { Newsletter } from "@/components/newsletter";
 import { SchemaGraph, videoListNode } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 import { getPage } from "@/lib/pages";
 import { faqs, HOME_FAQ_COUNT } from "@/lib/site";
 
@@ -19,17 +19,9 @@ const page = getPage("home");
    that isn't on the page. */
 const homeFaqs = faqs.slice(0, HOME_FAQ_COUNT);
 
-export const metadata: Metadata = {
-  title: page.title,
-  description: page.description,
-  keywords: [...page.keywords],
-  alternates: { canonical: page.path },
-  openGraph: {
-    url: page.path,
-    title: page.title,
-    description: page.description,
-  },
-};
+/* Built through the same helper as every other route, so the home page cannot
+   drift away from the shared canonical/OG/Twitter shape. */
+export const metadata = pageMetadata("home");
 
 export default function Home() {
   return (

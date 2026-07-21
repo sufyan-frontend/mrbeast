@@ -96,10 +96,13 @@ export function SiteFooter() {
           <p className="text-sm text-muted">
             Facts last reviewed{" "}
             <time dateTime={site.lastReviewed}>
+              {/* Pinned to UTC: "2026-07-21" parses as UTC midnight, so without
+                  this the build machine's timezone renders it a day early. */}
               {new Date(site.lastReviewed).toLocaleDateString("en-GB", {
                 day: "numeric",
                 month: "long",
                 year: "numeric",
+                timeZone: "UTC",
               })}
             </time>
           </p>
