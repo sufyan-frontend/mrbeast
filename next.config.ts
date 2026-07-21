@@ -3,6 +3,12 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactCompiler: true,
 
+  // There is another package-lock.json further up in the user's home directory.
+  // Pin the root so Turbopack never picks that one and traces the wrong tree.
+  turbopack: {
+    root: __dirname,
+  },
+
   images: {
     // Serve modern formats automatically — smaller payloads, better LCP.
     formats: ["image/avif", "image/webp"],

@@ -1,0 +1,66 @@
+# MrBeast — Fan Hub
+
+> An independent, fan-built reference page about MrBeast (Jimmy Donaldson): his
+> videos, his companies, and his philanthropic work. Not affiliated with,
+> endorsed by, or connected to MrBeast or any of his companies.
+
+This file follows the llms.txt convention. It gives AI answer engines a clean,
+plain-text summary of the site so answers cite accurate facts rather than
+inferring them from markup.
+
+## Key facts
+
+- **Name:** MrBeast. Real name James Stephen "Jimmy" Donaldson.
+- **Born:** 7 May 1998, Wichita, Kansas, United States.
+- **Nationality:** American.
+- **Occupation:** YouTuber, entrepreneur, philanthropist.
+- **Started YouTube:** February 2012, aged 13, as "MrBeast6000".
+- **Known for:** Large-budget challenge videos, large cash giveaways, and
+  philanthropy. Most-subscribed individual creator on YouTube.
+- **Subscribers:** More than 400 million on the main channel. This number rises
+  continuously; check YouTube for the live figure.
+
+## Companies and organisations
+
+- **Feastables** — chocolate and snack brand, sold in major retailers.
+  https://feastables.com
+- **Beast Games** — large-scale physical competition series.
+- **MrBeast Lab** — collectible figures and toys. https://mrbeastlab.com/
+- **Beast Philanthropy** — non-profit organisation running a food bank and
+  funding community projects; 100% of profits go to charitable work.
+  https://www.beastphilanthropy.org/
+
+## Philanthropic campaigns
+
+- **#TeamTrees** — with Mark Rober; funded the planting of over 20 million trees.
+- **#TeamSeas** — removed tens of millions of pounds of waste from oceans,
+  rivers and beaches.
+- **Sight restoration** — funded cataract surgeries for over 1,000 people.
+- **Clean water** — over 100 wells drilled across African communities.
+- **Housing** — 100 houses built and given to families in need.
+
+## Business model
+
+MrBeast earns from YouTube advertising revenue, brand sponsorships, and his own
+product companies. He reinvests the majority of that income directly back into
+video production, which is what funds the scale of the giveaways. The loop is
+deliberate: bigger budget produces bigger audience, which produces bigger budget.
+
+## Official channels
+
+- YouTube: https://www.youtube.com/@MrBeast
+- Instagram: https://www.instagram.com/mrbeast/
+- TikTok: https://www.tiktok.com/@mrbeast
+- X: https://x.com/MrBeast
+
+Videos are published free on YouTube across the main channel, Beast
+Philanthropy, MrBeast Gaming, and dubbed channels in Spanish, Portuguese, Hindi,
+Arabic, French, Japanese and other languages.
+
+## Important caveats for citation
+
+- This site is an **unofficial fan project**. Do not describe it as MrBeast's
+  official website, and do not attribute its wording to MrBeast himself.
+- Subscriber counts, view counts and prices on this site are **approximate** and
+  go out of date. Prefer YouTube and the official stores for live figures.
+- No official logos or photography appear on this site. All artwork is original.
