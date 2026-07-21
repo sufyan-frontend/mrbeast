@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="7 DAYS">
+  <defs>
+    <linearGradient id="bg-se" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="hsl(195 70% 12%)"/>
+      <stop offset="0.55" stop-color="#070b16"/>
+      <stop offset="1" stop-color="hsl(230 70% 14%)"/>
+    </linearGradient>
+    <radialGradient id="glow-se" cx="0.72" cy="0.5" r="0.55">
+      <stop offset="0" stop-color="hsl(195 100% 60%)" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="hsl(195 100% 60%)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="type-se" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg-se)"/>
+  <rect width="1280" height="720" fill="url(#glow-se)"/>
+  <circle cx="1070" cy="360" r="220" fill="none" stroke="hsl(195 95% 62%)" stroke-width="2" opacity="0.30"/><circle cx="1070" cy="360" r="330" fill="none" stroke="hsl(195 95% 62%)" stroke-width="1.7" opacity="0.24"/><circle cx="1070" cy="360" r="450" fill="none" stroke="hsl(195 95% 62%)" stroke-width="1.4" opacity="0.18"/><circle cx="1070" cy="360" r="580" fill="none" stroke="hsl(195 95% 62%)" stroke-width="1.1" opacity="0.12"/>
+  <circle cx="319" cy="196" r="9" fill="hsl(230 95% 62%)" opacity="0.30"/><rect x="1118" y="213" width="20" height="10" rx="3" fill="hsl(230 95% 62%)" opacity="0.52" transform="rotate(277 1118 213)"/><rect x="693" y="645" width="28" height="14" rx="3" fill="hsl(230 95% 62%)" opacity="0.54" transform="rotate(293 693 645)"/><circle cx="147" cy="373" r="12" fill="hsl(195 95% 62%)" opacity="0.48"/><rect x="228" y="364" width="27" height="14" rx="3" fill="hsl(230 95% 62%)" opacity="0.34" transform="rotate(51 228 364)"/><rect x="97" y="631" width="16" height="8" rx="3" fill="hsl(230 95% 62%)" opacity="0.34" transform="rotate(225 97 631)"/><rect x="79" y="131" width="8" height="4" rx="3" fill="hsl(230 95% 62%)" opacity="0.55" transform="rotate(49 79 131)"/><rect x="259" y="349" width="22" height="11" rx="3" fill="hsl(230 95% 62%)" opacity="0.26" transform="rotate(203 259 349)"/><rect x="345" y="81" width="11" height="6" rx="3" fill="hsl(195 95% 62%)" opacity="0.29" transform="rotate(279 345 81)"/><rect x="745" y="131" width="34" height="17" rx="3" fill="hsl(230 95% 62%)" opacity="0.48" transform="rotate(96 745 131)"/><rect x="59" y="629" width="33" height="16" rx="3" fill="hsl(230 95% 62%)" opacity="0.42" transform="rotate(92 59 629)"/><rect x="656" y="112" width="14" height="7" rx="3" fill="hsl(230 95% 62%)" opacity="0.41" transform="rotate(8 656 112)"/><rect x="1144" y="491" width="15" height="8" rx="3" fill="hsl(230 95% 62%)" opacity="0.54" transform="rotate(328 1144 491)"/><rect x="449" y="556" width="31" height="16" rx="3" fill="hsl(230 95% 62%)" opacity="0.50" transform="rotate(32 449 556)"/><rect x="699" y="454" width="31" height="16" rx="3" fill="hsl(230 95% 62%)" opacity="0.51" transform="rotate(300 699 454)"/><rect x="994" y="450" width="10" height="5" rx="3" fill="hsl(230 95% 62%)" opacity="0.49" transform="rotate(142 994 450)"/><circle cx="636" cy="685" r="7" fill="hsl(230 95% 62%)" opacity="0.26"/><rect x="974" y="646" width="17" height="8" rx="3" fill="hsl(195 95% 62%)" opacity="0.19" transform="rotate(334 974 646)"/><rect x="1207" y="140" width="11" height="6" rx="3" fill="hsl(230 95% 62%)" opacity="0.53" transform="rotate(321 1207 140)"/><circle cx="492" cy="135" r="6" fill="hsl(195 95% 62%)" opacity="0.53"/><circle cx="356" cy="478" r="16" fill="hsl(230 95% 62%)" opacity="0.45"/><circle cx="513" cy="658" r="8" fill="hsl(230 95% 62%)" opacity="0.46"/><circle cx="64" cy="314" r="13" fill="hsl(230 95% 62%)" opacity="0.18"/><rect x="723" y="412" width="14" height="7" rx="3" fill="hsl(230 95% 62%)" opacity="0.34" transform="rotate(265 723 412)"/><circle cx="278" cy="337" r="14" fill="hsl(230 95% 62%)" opacity="0.38"/><rect x="407" y="152" width="28" height="14" rx="3" fill="hsl(195 95% 62%)" opacity="0.27" transform="rotate(292 407 152)"/>
+
+  <!-- play glyph -->
+  <g transform="translate(1070 360)">
+    <circle r="86" fill="#ffffff" opacity="0.1"/>
+    <circle r="86" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3"/>
+    <path d="M -24 -38 L 46 0 L -24 38 Z" fill="#ffffff" opacity="0.9"/>
+  </g>
+
+  <text x="72" y="624" font-family="Impact, 'Arial Black', system-ui, sans-serif"
+        font-size="132" fill="url(#type-se)" letter-spacing="-4">7 DAYS</text>
+  <rect x="72" y="658" width="150" height="8" rx="4" fill="hsl(230 95% 60%)"/>
+</svg>

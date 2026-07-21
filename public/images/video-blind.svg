@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="1000">
+  <defs>
+    <linearGradient id="bg-bl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="hsl(160 70% 12%)"/>
+      <stop offset="0.55" stop-color="#070b16"/>
+      <stop offset="1" stop-color="hsl(200 70% 14%)"/>
+    </linearGradient>
+    <radialGradient id="glow-bl" cx="0.72" cy="0.5" r="0.55">
+      <stop offset="0" stop-color="hsl(160 100% 60%)" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="hsl(160 100% 60%)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="type-bl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg-bl)"/>
+  <rect width="1280" height="720" fill="url(#glow-bl)"/>
+  <circle cx="1070" cy="360" r="220" fill="none" stroke="hsl(160 95% 62%)" stroke-width="2" opacity="0.30"/><circle cx="1070" cy="360" r="330" fill="none" stroke="hsl(160 95% 62%)" stroke-width="1.7" opacity="0.24"/><circle cx="1070" cy="360" r="450" fill="none" stroke="hsl(160 95% 62%)" stroke-width="1.4" opacity="0.18"/><circle cx="1070" cy="360" r="580" fill="none" stroke="hsl(160 95% 62%)" stroke-width="1.1" opacity="0.12"/>
+  <circle cx="313" cy="197" r="15" fill="hsl(200 95% 62%)" opacity="0.21"/><circle cx="1018" cy="504" r="15" fill="hsl(160 95% 62%)" opacity="0.22"/><circle cx="38" cy="554" r="5" fill="hsl(160 95% 62%)" opacity="0.24"/><rect x="1183" y="105" width="29" height="15" rx="3" fill="hsl(160 95% 62%)" opacity="0.25" transform="rotate(214 1183 105)"/><circle cx="345" cy="514" r="8" fill="hsl(160 95% 62%)" opacity="0.47"/><circle cx="1185" cy="327" r="7" fill="hsl(160 95% 62%)" opacity="0.32"/><circle cx="1160" cy="43" r="9" fill="hsl(160 95% 62%)" opacity="0.48"/><circle cx="394" cy="266" r="5" fill="hsl(160 95% 62%)" opacity="0.37"/><rect x="835" y="649" width="28" height="14" rx="3" fill="hsl(200 95% 62%)" opacity="0.24" transform="rotate(245 835 649)"/><circle cx="1118" cy="440" r="14" fill="hsl(160 95% 62%)" opacity="0.28"/><rect x="799" y="150" width="10" height="5" rx="3" fill="hsl(200 95% 62%)" opacity="0.33" transform="rotate(337 799 150)"/><rect x="135" y="49" width="12" height="6" rx="3" fill="hsl(200 95% 62%)" opacity="0.25" transform="rotate(230 135 49)"/><circle cx="776" cy="237" r="16" fill="hsl(160 95% 62%)" opacity="0.37"/><rect x="1109" y="697" width="12" height="6" rx="3" fill="hsl(160 95% 62%)" opacity="0.33" transform="rotate(357 1109 697)"/><circle cx="293" cy="669" r="14" fill="hsl(160 95% 62%)" opacity="0.28"/><rect x="8" y="53" width="17" height="9" rx="3" fill="hsl(200 95% 62%)" opacity="0.52" transform="rotate(337 8 53)"/><circle cx="672" cy="18" r="4" fill="hsl(200 95% 62%)" opacity="0.45"/><rect x="718" y="348" width="12" height="6" rx="3" fill="hsl(200 95% 62%)" opacity="0.50" transform="rotate(358 718 348)"/><rect x="239" y="209" width="22" height="11" rx="3" fill="hsl(160 95% 62%)" opacity="0.31" transform="rotate(236 239 209)"/><circle cx="982" cy="302" r="15" fill="hsl(200 95% 62%)" opacity="0.22"/><circle cx="499" cy="387" r="7" fill="hsl(200 95% 62%)" opacity="0.42"/><rect x="665" y="571" width="34" height="17" rx="3" fill="hsl(160 95% 62%)" opacity="0.57" transform="rotate(96 665 571)"/><rect x="1131" y="381" width="11" height="6" rx="3" fill="hsl(200 95% 62%)" opacity="0.20" transform="rotate(210 1131 381)"/><rect x="1091" y="467" width="23" height="12" rx="3" fill="hsl(200 95% 62%)" opacity="0.26" transform="rotate(278 1091 467)"/><rect x="283" y="674" width="8" height="4" rx="3" fill="hsl(160 95% 62%)" opacity="0.38" transform="rotate(199 283 674)"/><rect x="1261" y="37" width="13" height="6" rx="3" fill="hsl(200 95% 62%)" opacity="0.23" transform="rotate(162 1261 37)"/>
+
+  <!-- play glyph -->
+  <g transform="translate(1070 360)">
+    <circle r="86" fill="#ffffff" opacity="0.1"/>
+    <circle r="86" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3"/>
+    <path d="M -24 -38 L 46 0 L -24 38 Z" fill="#ffffff" opacity="0.9"/>
+  </g>
+
+  <text x="72" y="624" font-family="Impact, 'Arial Black', system-ui, sans-serif"
+        font-size="132" fill="url(#type-bl)" letter-spacing="-4">1000</text>
+  <rect x="72" y="658" width="150" height="8" rx="4" fill="hsl(200 95% 60%)"/>
+</svg>

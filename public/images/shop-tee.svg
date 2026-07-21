@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="TEE">
+  <defs>
+    <linearGradient id="tbg-st" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="hsl(220 65% 14%)"/>
+      <stop offset="1" stop-color="#080d1a"/>
+    </linearGradient>
+    <radialGradient id="tglow-st" cx="0.5" cy="0.42" r="0.5">
+      <stop offset="0" stop-color="hsl(200 100% 62%)" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="hsl(200 100% 62%)" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#tbg-st)"/>
+  <rect x="-260" y="-200" width="59" height="1200" fill="hsl(220 95% 60%)" opacity="0.14" transform="rotate(22 400 400)"/><rect x="-90" y="-200" width="86" height="1200" fill="hsl(200 95% 60%)" opacity="0.13" transform="rotate(22 400 400)"/><rect x="80" y="-200" width="89" height="1200" fill="hsl(220 95% 60%)" opacity="0.13" transform="rotate(22 400 400)"/><rect x="250" y="-200" width="48" height="1200" fill="hsl(200 95% 60%)" opacity="0.13" transform="rotate(22 400 400)"/><rect x="420" y="-200" width="91" height="1200" fill="hsl(220 95% 60%)" opacity="0.10" transform="rotate(22 400 400)"/><rect x="590" y="-200" width="72" height="1200" fill="hsl(200 95% 60%)" opacity="0.12" transform="rotate(22 400 400)"/><rect x="760" y="-200" width="89" height="1200" fill="hsl(220 95% 60%)" opacity="0.15" transform="rotate(22 400 400)"/>
+  <rect width="800" height="800" fill="url(#tglow-st)"/>
+  <circle cx="400" cy="400" r="248" fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2"/>
+  <circle cx="400" cy="400" r="196" fill="#ffffff" fill-opacity="0.05"/>
+  <text x="400" y="400" text-anchor="middle" dominant-baseline="central"
+        font-family="Impact, 'Arial Black', system-ui, sans-serif" font-size="188"
+        fill="#ffffff" fill-opacity="0.9" letter-spacing="-6">TEE</text>
+</svg>

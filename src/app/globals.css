@@ -1,26 +1,187 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------
+   Brand tokens — high-energy creator palette
+   (electric blue + hot accent on deep black, MrBeast-style)
+   --------------------------------------------------------------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05070d;
+  --foreground: #f5f7fb;
+
+  --brand-500: #0a84ff;
+  --brand-600: #0b6bdc;
+  --brand-400: #4aa8ff;
+  --accent-500: #ff2d55;
+  --accent-400: #ff5c7c;
+  --gold-500: #ffb020;
+
+  --surface: #0b1020;
+  --surface-2: #121a2e;
+  --border: #1e2942;
+  --muted: #9aa8c4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-400: var(--brand-400);
+  --color-accent: var(--accent-500);
+  --color-accent-400: var(--accent-400);
+  --color-gold: var(--gold-500);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--border);
+  --color-muted: var(--muted);
+
+  --font-sans: var(--font-display), system-ui, sans-serif;
+  --font-display: var(--font-display), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+  /* offset for the sticky header when jumping to #anchors */
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* prevent any child from creating a horizontal scrollbar on mobile */
+  overflow-x: hidden;
+}
+
+/* Respect users who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Visible, on-brand focus ring for keyboard users */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--brand-400);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--brand-500);
+  color: #fff;
+}
+
+/* ---------------------------------------------------------------
+   Utilities
+   --------------------------------------------------------------- */
+
+/* Skip link — visually hidden until focused */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.text-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--brand-400) 0%,
+    #ffffff 45%,
+    var(--brand-400) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Soft radial glow used behind hero + section headers */
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Fine grid backdrop */
+.grid-backdrop {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    #000 40%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+/* Scroll-reveal: starts hidden, .is-visible is added by IntersectionObserver.
+   Reduced-motion users and no-JS users get the content immediately. */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Marquee for the ticker strip */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee-x 32s linear infinite;
+}
+
+/* Slow float for hero decorations */
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+.animate-float {
+  animation: float-y 7s ease-in-out infinite;
 }

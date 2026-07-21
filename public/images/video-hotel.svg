@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="$1 vs $1M">
+  <defs>
+    <linearGradient id="bg-ht" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="hsl(42 70% 12%)"/>
+      <stop offset="0.55" stop-color="#070b16"/>
+      <stop offset="1" stop-color="hsl(210 70% 14%)"/>
+    </linearGradient>
+    <radialGradient id="glow-ht" cx="0.72" cy="0.5" r="0.55">
+      <stop offset="0" stop-color="hsl(42 100% 60%)" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="hsl(42 100% 60%)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="type-ht" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg-ht)"/>
+  <rect width="1280" height="720" fill="url(#glow-ht)"/>
+  <circle cx="1070" cy="360" r="220" fill="none" stroke="hsl(42 95% 62%)" stroke-width="2" opacity="0.30"/><circle cx="1070" cy="360" r="330" fill="none" stroke="hsl(42 95% 62%)" stroke-width="1.7" opacity="0.24"/><circle cx="1070" cy="360" r="450" fill="none" stroke="hsl(42 95% 62%)" stroke-width="1.4" opacity="0.18"/><circle cx="1070" cy="360" r="580" fill="none" stroke="hsl(42 95% 62%)" stroke-width="1.1" opacity="0.12"/>
+  <rect x="324" y="194" width="33" height="16" rx="3" fill="hsl(42 95% 62%)" opacity="0.39" transform="rotate(107 324 194)"/><circle cx="1217" cy="642" r="5" fill="hsl(42 95% 62%)" opacity="0.42"/><circle cx="68" cy="17" r="10" fill="hsl(42 95% 62%)" opacity="0.45"/><rect x="392" y="641" width="18" height="9" rx="3" fill="hsl(42 95% 62%)" opacity="0.32" transform="rotate(64 392 641)"/><rect x="111" y="213" width="13" height="7" rx="3" fill="hsl(42 95% 62%)" opacity="0.20" transform="rotate(305 111 213)"/><rect x="290" y="215" width="17" height="8" rx="3" fill="hsl(210 95% 62%)" opacity="0.36" transform="rotate(183 290 215)"/><rect x="278" y="219" width="25" height="13" rx="3" fill="hsl(42 95% 62%)" opacity="0.21" transform="rotate(45 278 219)"/><circle cx="125" cy="432" r="17" fill="hsl(42 95% 62%)" opacity="0.55"/><rect x="1134" y="232" width="21" height="10" rx="3" fill="hsl(42 95% 62%)" opacity="0.35" transform="rotate(314 1134 232)"/><circle cx="372" cy="542" r="7" fill="hsl(42 95% 62%)" opacity="0.28"/><rect x="599" y="388" width="29" height="15" rx="3" fill="hsl(210 95% 62%)" opacity="0.51" transform="rotate(207 599 388)"/><rect x="1178" y="175" width="17" height="9" rx="3" fill="hsl(42 95% 62%)" opacity="0.56" transform="rotate(146 1178 175)"/><circle cx="232" cy="26" r="12" fill="hsl(42 95% 62%)" opacity="0.32"/><circle cx="1069" cy="415" r="12" fill="hsl(42 95% 62%)" opacity="0.28"/><circle cx="1104" cy="239" r="4" fill="hsl(42 95% 62%)" opacity="0.33"/><circle cx="700" cy="126" r="14" fill="hsl(42 95% 62%)" opacity="0.47"/><circle cx="601" cy="632" r="10" fill="hsl(42 95% 62%)" opacity="0.46"/><rect x="1231" y="225" width="21" height="11" rx="3" fill="hsl(42 95% 62%)" opacity="0.29" transform="rotate(309 1231 225)"/><circle cx="894" cy="71" r="13" fill="hsl(42 95% 62%)" opacity="0.35"/><circle cx="2" cy="688" r="10" fill="hsl(42 95% 62%)" opacity="0.44"/><rect x="213" y="568" width="22" height="11" rx="3" fill="hsl(210 95% 62%)" opacity="0.49" transform="rotate(303 213 568)"/><circle cx="362" cy="25" r="12" fill="hsl(210 95% 62%)" opacity="0.36"/><rect x="277" y="246" width="16" height="8" rx="3" fill="hsl(42 95% 62%)" opacity="0.57" transform="rotate(48 277 246)"/><circle cx="356" cy="356" r="15" fill="hsl(210 95% 62%)" opacity="0.42"/><rect x="272" y="719" width="21" height="10" rx="3" fill="hsl(42 95% 62%)" opacity="0.37" transform="rotate(244 272 719)"/><rect x="832" y="267" width="17" height="8" rx="3" fill="hsl(210 95% 62%)" opacity="0.30" transform="rotate(63 832 267)"/>
+
+  <!-- play glyph -->
+  <g transform="translate(1070 360)">
+    <circle r="86" fill="#ffffff" opacity="0.1"/>
+    <circle r="86" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3"/>
+    <path d="M -24 -38 L 46 0 L -24 38 Z" fill="#ffffff" opacity="0.9"/>
+  </g>
+
+  <text x="72" y="624" font-family="Impact, 'Arial Black', system-ui, sans-serif"
+        font-size="132" fill="url(#type-ht)" letter-spacing="-4">$1 vs $1M</text>
+  <rect x="72" y="658" width="150" height="8" rx="4" fill="hsl(210 95% 60%)"/>
+</svg>
