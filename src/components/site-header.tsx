@@ -1,14 +1,21 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { BrandMark } from "./brand-mark";
-import { nav } from "@/lib/site";
+import { navPages } from "@/lib/pages";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  // Close the panel on navigation, otherwise it stays open over the new page.
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   // Solidify the bar once the user leaves the top of the page.
   useEffect(() => {
@@ -65,14 +72,17 @@ export function SiteHeader() {
 
         <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-1">
-            {nav.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="rounded-full px-4 py-2 text-sm font-semibold text-muted transition-colors hover:bg-white/5 hover:text-foreground"
+            {navPages.map((page) => (
+              <li key={page.path}>
+                <Link
+                  href={page.path}
+                  aria-current={pathname === page.path ? "page" : undefined}
+                  className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors hover:bg-white/5 hover:text-foreground ${
+                    pathname === page.path ? "bg-white/5 text-foreground" : "text-muted"
+                  }`}
                 >
-                  {item.label}
-                </a>
+                  {page.navLabel}
+                </Link>
               </li>
             ))}
           </ul>
@@ -123,15 +133,18 @@ export function SiteHeader() {
       >
         <nav aria-label="Mobile" className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
           <ul className="flex flex-col gap-1">
-            {nav.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
+            {navPages.map((page) => (
+              <li key={page.path}>
+                <Link
+                  href={page.path}
                   onClick={() => setOpen(false)}
-                  className="block rounded-xl px-4 py-3 text-base font-semibold text-foreground transition-colors hover:bg-white/5"
+                  aria-current={pathname === page.path ? "page" : undefined}
+                  className={`block rounded-xl px-4 py-3 text-base font-semibold transition-colors hover:bg-white/5 ${
+                    pathname === page.path ? "bg-white/5 text-brand-400" : "text-foreground"
+                  }`}
                 >
-                  {item.label}
-                </a>
+                  {page.navLabel}
+                </Link>
               </li>
             ))}
           </ul>

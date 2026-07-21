@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BrandMark } from "./brand-mark";
-import { nav, site, socials } from "@/lib/site";
+import { homeSections, site, socials } from "@/lib/site";
+import { pages } from "@/lib/pages";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -8,7 +9,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-surface/40">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" aria-label={`${site.name} — home`}>
@@ -19,20 +20,43 @@ export function SiteFooter() {
             </p>
           </div>
 
-          {/* Explore */}
+          {/*
+            Every page links to every other page from here. That is what turns
+            six isolated URLs into one crawlable cluster — internal links are how
+            crawl budget and link equity reach the deeper pages at all.
+          */}
+          <nav aria-labelledby="footer-pages">
+            <h2 id="footer-pages" className="text-sm font-bold uppercase tracking-[0.14em]">
+              Pages
+            </h2>
+            <ul className="mt-4 space-y-2.5">
+              {pages.map((page) => (
+                <li key={page.path}>
+                  <Link
+                    href={page.path}
+                    className="text-sm text-muted transition-colors hover:text-foreground"
+                  >
+                    {page.navLabel}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Home-page anchors, root-relative so they work from any route. */}
           <nav aria-labelledby="footer-explore">
             <h2 id="footer-explore" className="text-sm font-bold uppercase tracking-[0.14em]">
               Explore
             </h2>
             <ul className="mt-4 space-y-2.5">
-              {nav.map((item) => (
+              {homeSections.map((item) => (
                 <li key={item.href}>
-                  <a
+                  <Link
                     href={item.href}
                     className="text-sm text-muted transition-colors hover:text-foreground"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -62,8 +86,22 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-muted">© {year} — built with Next.js.</p>
+
+          {/*
+            A visible review date is a real E-E-A-T signal, and it matches the
+            `dateModified` in the JSON-LD. Only move site.lastReviewed when the
+            facts have genuinely been rechecked.
+          */}
           <p className="text-sm text-muted">
-            © {year} — built with Next.js.
+            Facts last reviewed{" "}
+            <time dateTime={site.lastReviewed}>
+              {new Date(site.lastReviewed).toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
+            </time>
           </p>
         </div>
 

@@ -27,7 +27,8 @@ export function Hero() {
               id="hero-title"
               className="mt-5 text-balance text-[2.6rem] font-black leading-[0.95] tracking-tighter sm:text-6xl lg:text-7xl xl:text-[5.25rem]"
             >
-              I make the <span className="text-gradient">biggest videos</span> on the internet.
+              MrBeast makes the <span className="text-gradient">biggest videos</span> on the
+              internet.
             </h1>
           </Reveal>
 

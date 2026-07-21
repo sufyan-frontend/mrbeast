@@ -38,15 +38,31 @@ export const site = {
   birthDate: "1998-05-07",
   birthPlace: "Wichita, Kansas, United States",
   nationality: "American",
+  /**
+   * Date the facts on this site were last checked, in ISO form.
+   *
+   * Surfaced as `dateModified` in the JSON-LD and as a visible "last reviewed"
+   * line on every page. Both Google and AI answer engines weight freshness for
+   * queries like net worth and subscriber counts, and a visible review date is
+   * a genuine E-E-A-T signal — so only move it when you have actually rechecked
+   * the numbers.
+   */
+  lastReviewed: "2026-07-21",
 } as const;
 
-export const nav = [
-  { label: "Videos", href: "#videos" },
-  { label: "Ventures", href: "#ventures" },
-  { label: "Philanthropy", href: "#philanthropy" },
-  { label: "Shop", href: "#shop" },
-  { label: "About", href: "#about" },
-  { label: "FAQ", href: "#faq" },
+/**
+ * In-page anchors on the home page.
+ *
+ * Each href is root-relative (`/#videos`, not `#videos`) so the same link works
+ * from `/net-worth` or any other route — a bare `#videos` would silently jump
+ * to nothing on every page except the home page.
+ */
+export const homeSections = [
+  { label: "Videos", href: "/#videos" },
+  { label: "Ventures", href: "/#ventures" },
+  { label: "Philanthropy", href: "/#philanthropy" },
+  { label: "Shop", href: "/#shop" },
+  { label: "About", href: "/#about" },
 ] as const;
 
 export const socials = [
@@ -257,13 +273,21 @@ export const shopItems = [
 ] as const;
 
 /**
- * FAQ.
+ * FAQ — the master list.
  *
- * This block does the heaviest AEO/GEO lifting on the page: every answer opens
+ * This block does the heaviest AEO/GEO lifting on the site: every answer opens
  * with a complete, self-contained sentence so an AI answer engine can lift a
  * single passage and cite it without needing the rest of the page. Keep that
  * pattern if you add entries.
+ *
+ * The home page renders only the first `HOME_FAQ_COUNT` and emits FAQPage
+ * schema for exactly those; `/faq` renders and marks up the full list. Serving
+ * the same question twice with identical markup on two URLs is a duplicate
+ * signal, so the split is what keeps `/faq` a genuinely distinct page rather
+ * than a copy of a home-page section.
  */
+export const HOME_FAQ_COUNT = 6;
+
 export const faqs = [
   {
     question: "Who is MrBeast?",
@@ -305,6 +329,151 @@ export const faqs = [
     answer:
       "Casting for MrBeast videos is announced through his official YouTube community posts and verified social accounts, and applications open only for specific productions. Any site asking for a fee to enter is not an official channel.",
   },
+
+  /* ---- Questions below appear only on /faq ---- */
+
+  {
+    question: "How old is MrBeast?",
+    answer:
+      "MrBeast was born on 7 May 1998, which makes him 28 years old in 2026. He was thirteen when he uploaded his first YouTube video in February 2012.",
+  },
+  {
+    question: "Where is MrBeast from?",
+    answer:
+      "MrBeast was born in Wichita, Kansas, and grew up largely in Greenville, North Carolina, which is where he later based his production operation. He is American.",
+  },
+  {
+    question: "How much is MrBeast worth?",
+    answer:
+      "Estimates of MrBeast's personal net worth vary widely, from roughly $500 million to over $1 billion, because he holds most of his wealth as equity in the private company Beast Industries rather than as cash. No exact figure is published, and any single number you see quoted is a third-party estimate.",
+  },
+  {
+    question: "What is MrBeast's real name?",
+    answer:
+      "MrBeast's real name is James Stephen Donaldson, and he goes by Jimmy Donaldson. The name \"MrBeast\" comes from his original 2012 YouTube username, MrBeast6000.",
+  },
+  {
+    question: "Is MrBeast the most subscribed YouTuber?",
+    answer:
+      "Yes. MrBeast's main channel is the most-subscribed channel on YouTube and he is the most-subscribed individual creator, ahead of corporate channels such as T-Series and Cocomelon. He passed T-Series for the top spot in 2024.",
+  },
+  {
+    question: "How long does a MrBeast video take to make?",
+    answer:
+      "A single MrBeast video typically takes weeks to months from concept to publication, involving set construction, large casts and multiple camera crews. Production budgets for the biggest videos run into the millions of dollars, which is why uploads are spaced weeks apart rather than daily.",
+  },
+  {
+    question: "What is Feastables?",
+    answer:
+      "Feastables is MrBeast's chocolate and snack brand, launched in 2022 and sold in major retailers across the United States and internationally. It is one of the businesses under Beast Industries and a significant part of how the video operation is funded.",
+  },
+  {
+    question: "What is Beast Games?",
+    answer:
+      "Beast Games is MrBeast's large-scale physical competition series, which takes the format of his channel's last-to-leave challenges and scales it into full-length streaming television. It is his first major production made for a platform other than YouTube.",
+  },
+  {
+    question: "Does MrBeast really give away the money?",
+    answer:
+      "Yes. Prizes shown in MrBeast videos are genuinely awarded to contestants, and the giveaways are a production cost rather than a marketing illusion. The scale of the prizes is what drives the viewership, and the advertising and sponsorship revenue that viewership generates is what funds the next video.",
+  },
+  {
+    question: "How many YouTube channels does MrBeast have?",
+    answer:
+      "MrBeast operates several channels beyond the main one, including Beast Philanthropy, MrBeast Gaming, and a family of dubbed channels publishing his videos in Spanish, Portuguese, Hindi, Arabic, French, Japanese and other languages. The dubbed channels are how a large share of his international audience watches.",
+  },
+] as const;
+
+/**
+ * Net worth.
+ *
+ * >>> THESE ARE THIRD-PARTY ESTIMATES, NOT PUBLISHED ACCOUNTS. <<<
+ * Jimmy Donaldson does not publish his personal finances, and reputable outlets
+ * disagree by a factor of two or more. Presenting a single hard number as fact
+ * would be wrong about a real person and is exactly the kind of unsourced
+ * precision that gets a page demoted rather than cited. Keep the range, keep
+ * the hedging language, and re-check `site.lastReviewed` when you touch this.
+ */
+export const netWorth = {
+  low: "$500 million",
+  high: "$1 billion+",
+  /** Why the published numbers disagree so much. This is the actual answer. */
+  reasons: [
+    {
+      title: "Almost nothing is taken out as cash",
+      body: "The overwhelming majority of ad, sponsorship and brand revenue is reinvested straight back into the next video. Wealth that never leaves the business does not show up as personal income.",
+    },
+    {
+      title: "The wealth is equity, not salary",
+      body: "Most of it is a stake in Beast Industries, the private parent company behind the channels, Feastables and the rest. Private equity is only worth what the last funding round said it was worth.",
+    },
+    {
+      title: "The company is valued far above the person",
+      body: "Reported valuations for Beast Industries run several times higher than any estimate of Donaldson's personal net worth. Conflating the two is the single most common error in net-worth articles.",
+    },
+    {
+      title: "Production costs are enormous",
+      body: "Individual videos have carried budgets in the millions. High revenue with high burn produces a much smaller net figure than headline earnings suggest.",
+    },
+  ],
+  /** Revenue streams, roughly ordered by reported significance. */
+  streams: [
+    {
+      name: "YouTube ad revenue",
+      body: "Billions of views across the main channel and the dubbed channels, monetised through YouTube's advertising share. The single largest and most predictable line.",
+    },
+    {
+      name: "Brand sponsorships",
+      body: "Integrations sold at a premium because of guaranteed reach. Historically these have funded a meaningful share of individual video budgets.",
+    },
+    {
+      name: "Feastables",
+      body: "A consumer packaged-goods business with retail distribution — the stream least dependent on YouTube's algorithm, and the reason the valuation is what it is.",
+    },
+    {
+      name: "Beast Games and licensing",
+      body: "Streaming production for a platform other than YouTube, plus collectibles through MrBeast Lab and merchandise.",
+    },
+  ],
+} as const;
+
+/**
+ * Subscriber ranking, used by /best-youtuber.
+ *
+ * Rounded on purpose. These counts move every single day, so quoting them to
+ * the nearest thousand would be false precision that is stale within hours.
+ * `isCreator` separates individual creators from corporate media channels —
+ * which is the distinction the "biggest YouTuber" question is really about.
+ */
+export const subscriberRanking = [
+  {
+    channel: "MrBeast",
+    approxSubscribers: "440M+",
+    kind: "Individual creator",
+    isCreator: true,
+    note: "Took the overall number-one spot from T-Series in 2024 and has held it since.",
+  },
+  {
+    channel: "T-Series",
+    approxSubscribers: "300M+",
+    kind: "Music label",
+    isCreator: false,
+    note: "An Indian music and film label uploading at enormous volume — a company, not a creator.",
+  },
+  {
+    channel: "Cocomelon",
+    approxSubscribers: "190M+",
+    kind: "Children's studio",
+    isCreator: false,
+    note: "Animated nursery-rhyme content with exceptionally high repeat watch time.",
+  },
+  {
+    channel: "PewDiePie",
+    approxSubscribers: "110M+",
+    kind: "Individual creator",
+    isCreator: true,
+    note: "Held the most-subscribed-creator title for most of the 2010s.",
+  },
 ] as const;
 
 /** Alternate-language / secondary channels. */
@@ -319,12 +488,29 @@ export const channels = [
   "MrBeast en Français",
 ] as const;
 
-/** Keywords — used in metadata and to keep copywriting on-topic. */
+/**
+ * Site-wide keyword set.
+ *
+ * Google has ignored the `keywords` meta tag for well over a decade, so this
+ * earns its place for two other reasons: Bing and several AI answer engines
+ * still read it, and keeping the target list in code is what stops the page
+ * copy from quietly drifting off-topic. Both spellings of the brand are here
+ * because real search traffic splits between "MrBeast" and "Mr Beast".
+ *
+ * Per-page clusters live in `lib/pages.ts` — this is only the shared trunk.
+ */
 export const keywords = [
   "MrBeast",
+  "Mr Beast",
   "Jimmy Donaldson",
+  "Jimmy MrBeast",
+  "MrBeast real name",
   "MrBeast videos",
   "MrBeast net worth",
+  "best YouTuber",
+  "best YouTuber in the world",
+  "most subscribed YouTuber",
+  "biggest YouTuber",
   "Feastables",
   "Beast Games",
   "Beast Philanthropy",
@@ -333,5 +519,4 @@ export const keywords = [
   "TeamTrees",
   "TeamSeas",
   "MrBeast merch",
-  "most subscribed YouTuber",
 ] as const;

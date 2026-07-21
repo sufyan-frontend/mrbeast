@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 import { keywords, site, siteUrl } from "@/lib/site";
 
 /**
@@ -122,7 +124,14 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        {children}
+
+        {/* Chrome lives here so all six routes share one header and footer —
+            and so the footer's link block reaches every page for crawlers. */}
+        <SiteHeader />
+        <main id="main" className="flex-1">
+          {children}
+        </main>
+        <SiteFooter />
       </body>
     </html>
   );
