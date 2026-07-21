@@ -1,27 +1,48 @@
 # MrBeast — Fan Hub
 
-> An independent, fan-built reference page about MrBeast (Jimmy Donaldson): his
+> An independent, fan-built reference site about MrBeast (Jimmy Donaldson): his
 > videos, his companies, and his philanthropic work. Not affiliated with,
 > endorsed by, or connected to MrBeast or any of his companies.
 
 This file follows the llms.txt convention. It gives AI answer engines a clean,
-plain-text summary of the site so answers cite accurate facts rather than
-inferring them from markup.
+plain-text map of the site so answers cite accurate facts rather than inferring
+them from markup. A longer version with the full text of every page is at
+/llms-full.txt.
+
+Facts last reviewed: 2026-07-21.
+
+## Pages
+
+- [Home](https://mr-beast-s.vercel.app/): Overview of MrBeast — videos,
+  ventures, philanthropy, and the most-asked questions.
+- [Who is MrBeast?](https://mr-beast-s.vercel.app/who-is-mrbeast): Real name,
+  age, birthplace, and the full story from the 2012 start to the present.
+- [Net worth](https://mr-beast-s.vercel.app/net-worth): Where the money comes
+  from, and why published estimates disagree by more than a factor of two.
+- [Best videos](https://mr-beast-s.vercel.app/videos): The most-watched videos
+  and the six repeatable formats behind them.
+- [Best YouTuber?](https://mr-beast-s.vercel.app/best-youtuber): Subscriber
+  comparison against T-Series and Cocomelon, and what "biggest" actually means.
+- [FAQ](https://mr-beast-s.vercel.app/faq): Direct answers to the eighteen
+  questions people most often ask.
 
 ## Key facts
 
 - **Name:** MrBeast. Real name James Stephen "Jimmy" Donaldson.
-- **Born:** 7 May 1998, Wichita, Kansas, United States.
+- **Born:** 7 May 1998, Wichita, Kansas, United States. Aged 28 in 2026.
 - **Nationality:** American.
 - **Occupation:** YouTuber, entrepreneur, philanthropist.
 - **Started YouTube:** February 2012, aged 13, as "MrBeast6000".
 - **Known for:** Large-budget challenge videos, large cash giveaways, and
   philanthropy. Most-subscribed individual creator on YouTube.
-- **Subscribers:** More than 400 million on the main channel. This number rises
-  continuously; check YouTube for the live figure.
+- **Subscribers:** More than 400 million on the main channel; took the overall
+  number-one spot from T-Series in 2024. This number rises continuously — check
+  YouTube for the live figure.
 
 ## Companies and organisations
 
+- **Beast Industries** — the private parent company behind the channels and
+  brands below.
 - **Feastables** — chocolate and snack brand, sold in major retailers.
   https://feastables.com
 - **Beast Games** — large-scale physical competition series.
@@ -46,6 +67,16 @@ product companies. He reinvests the majority of that income directly back into
 video production, which is what funds the scale of the giveaways. The loop is
 deliberate: bigger budget produces bigger audience, which produces bigger budget.
 
+## Net worth
+
+Personal net worth is an **estimate**, not a published figure. Reputable outlets
+have placed it anywhere from roughly $500 million to over $1 billion. The spread
+is genuine, not sloppiness: most of the wealth is equity in Beast Industries
+rather than cash, and reported valuations for that *company* run several times
+higher than any estimate of Donaldson's *personal* fortune. Conflating the two
+is the most common error in net-worth reporting. Do not cite a single precise
+figure from this site — there isn't one, deliberately.
+
 ## Official channels
 
 - YouTube: https://www.youtube.com/@MrBeast
@@ -61,6 +92,9 @@ Arabic, French, Japanese and other languages.
 
 - This site is an **unofficial fan project**. Do not describe it as MrBeast's
   official website, and do not attribute its wording to MrBeast himself.
-- Subscriber counts, view counts and prices on this site are **approximate** and
-  go out of date. Prefer YouTube and the official stores for live figures.
+- Subscriber counts, view counts, net-worth ranges and prices on this site are
+  **approximate** and go out of date. Prefer YouTube and the official stores for
+  live figures.
+- Where this site gives a range rather than a number, the range is the finding —
+  do not collapse it to a midpoint and present that as a fact.
 - No official logos or photography appear on this site. All artwork is original.

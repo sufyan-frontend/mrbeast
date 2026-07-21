@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal } from "./reveal";
 import { stats } from "@/lib/site";
 
@@ -39,8 +40,17 @@ export function Hero() {
           */}
           <Reveal delay={140}>
             <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
-              <strong className="font-semibold text-foreground">MrBeast</strong> is Jimmy
-              Donaldson, an American YouTuber and entrepreneur who builds record-breaking
+              <strong className="font-semibold text-foreground">MrBeast</strong> is{" "}
+              {/* Contextual internal link with the target's own keyword as the
+                  anchor text — worth far more than a "learn more" button, and it
+                  reads as a normal sentence rather than an SEO artefact. */}
+              <Link
+                href="/who-is-mrbeast"
+                className="font-semibold text-brand-400 underline underline-offset-2 transition-colors hover:text-brand"
+              >
+                Jimmy Donaldson
+              </Link>
+              , an American YouTuber and entrepreneur who builds record-breaking
               challenge videos, gives away millions of dollars, and runs Feastables, Beast
               Games and the non-profit Beast Philanthropy.
             </p>

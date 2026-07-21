@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./section-heading";
 import { videos, type Video } from "@/lib/site";
@@ -19,7 +20,18 @@ function hrefFor(video: Video) {
     : "https://www.youtube.com/@MrBeast";
 }
 
-export function Videos() {
+/**
+ * Home-page video teaser.
+ *
+ * `limit` exists to stop this section and `/videos` rendering the same six
+ * cards with the same titles and blurbs. Two URLs carrying identical content is
+ * a duplicate signal that makes Google pick one and discount the other — and
+ * since `/videos` is the page built to rank for "best MrBeast videos", the home
+ * page shows a subset and links up to it instead of competing with it.
+ */
+export function Videos({ limit = 3 }: { limit?: number }) {
+  const featured = videos.slice(0, limit);
+
   return (
     <section id="videos" className="relative scroll-mt-24 py-20 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -30,7 +42,7 @@ export function Videos() {
         />
 
         <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
-          {videos.map((video, index) => (
+          {featured.map((video, index) => (
             <Reveal as="li" key={video.title} delay={(index % 3) * 90}>
               <article className="group h-full overflow-hidden rounded-2xl border border-line bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-brand-400/50 hover:shadow-2xl hover:shadow-brand/10">
                 <a
@@ -90,15 +102,26 @@ export function Videos() {
           ))}
         </ul>
 
-        <Reveal delay={120} className="mt-12 text-center">
+        <Reveal delay={120} className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          {/* Internal link first, and descriptive rather than "read more" —
+              anchor text is the strongest hint about what the target page is
+              for, and this is the main path from the home page into /videos. */}
+          <Link
+            href="/videos"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-7 py-3.5 text-base font-bold text-white transition-colors hover:bg-brand-600 sm:w-auto"
+          >
+            See the best MrBeast videos
+            <span aria-hidden="true">→</span>
+          </Link>
+
           <a
             href="https://www.youtube.com/@MrBeast/videos"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-surface/60 px-7 py-3.5 text-base font-bold transition-colors hover:border-brand-400/60 hover:bg-surface-2"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-line bg-surface/60 px-7 py-3.5 text-base font-bold transition-colors hover:border-brand-400/60 hover:bg-surface-2 sm:w-auto"
           >
             Browse every video on YouTube
-            <span aria-hidden="true">→</span>
+            <span aria-hidden="true">↗</span>
           </a>
         </Reveal>
       </div>
