@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Faq } from "@/components/faq";
 import { PageHero } from "@/components/page-hero";
 import { RelatedPages } from "@/components/related-pages";
 import { SchemaGraph } from "@/lib/schema";
@@ -20,48 +21,25 @@ export default function FaqPage() {
 
       <PageHero page={page} eyebrow="FAQ" answerLabel="The short version" />
 
+      {/*
+        The same component the home page uses, given the full list instead of a
+        slice. Questions render as <h3> beneath the section's <h2>, keeping the
+        outline correct under the page's single <h1>.
+
+        Every answer is in the server-rendered HTML inside a native <details> —
+        present in the DOM whether open or closed. Answers revealed only by
+        JavaScript are invisible to crawlers, which is the usual reason an FAQ
+        page with perfect markup never earns a snippet.
+      */}
+      <Faq
+        entries={faqs}
+        title="Every question, answered"
+        lede="Grouped from what people actually search for — identity, money, the philanthropy, and how to take part."
+        headingLevel="h3"
+      />
+
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        {/*
-          Every answer is in the server-rendered HTML and inside a native
-          <details> — open or closed, the text is present in the DOM. Answers
-          hidden behind JavaScript are invisible to crawlers, which is the
-          usual reason an FAQ page with perfect markup never earns a snippet.
-        */}
-        <div className="space-y-3">
-          {faqs.map((faq) => (
-            <details
-              key={faq.question}
-              className="group rounded-2xl border border-line bg-surface transition-colors open:border-brand-400/50 hover:border-brand-400/40"
-            >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-base font-bold leading-snug sm:p-6 sm:text-lg [&::-webkit-details-marker]:hidden">
-                <h2 className="text-balance">{faq.question}</h2>
-                <span
-                  aria-hidden="true"
-                  className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line bg-background text-brand-400 transition-transform duration-300 group-open:rotate-45"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="size-4"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                  >
-                    <path d="M12 5v14M5 12h14" />
-                  </svg>
-                </span>
-              </summary>
-
-              <div className="px-5 pb-5 sm:px-6 sm:pb-6">
-                <p className="text-pretty text-base leading-relaxed text-muted">
-                  {faq.answer}
-                </p>
-              </div>
-            </details>
-          ))}
-        </div>
-
-        <div className="prose mt-16">
+        <div className="prose">
           <h2 id="more">Still looking for something?</h2>
           <p>
             The three questions people ask most have pages of their own, with the full
